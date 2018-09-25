@@ -40,17 +40,17 @@ public class ActivityController
         ActivityModel activityModel = activityRepository.getOnId(id);
         model.addAttribute("activitymodel", activityModel);
 
-        return "";
+        return "/...";
     }
 
     //Value og return skal udfyldes, når adressen er kendt
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "/...", method = RequestMethod.POST)
     public String updateActivity(@ModelAttribute ActivityModel activityModel, RedirectAttributes rdt)
     {
         rdt.addFlashAttribute("message", "Aktivetet opdateret");
         activityRepository.updateActivity(activityModel);
 
-        return "";
+        return "/...";
     }
 
 

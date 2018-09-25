@@ -36,7 +36,7 @@ public class ActivityRepository
         String name = activityModel.getName();
 
         String sql = "UPDATE Activity as a " +
-                "SET age_restriction = " + ageRestriction + ", description = " + description + ", name = " + name + " " +
+                "SET age_restriction = " + ageRestriction + ", description = '" + description + "', name = '" + name + "' " +
                 "WHERE a.id = " + id + ";";
 
         jdbc.update(sql);
