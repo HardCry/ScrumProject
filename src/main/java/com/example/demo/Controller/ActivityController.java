@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,6 +16,13 @@ public class ActivityController
 {
     ActivityRepository activityRepository;
 
+
+    @RequestMapping(value = "/CreateActivity", method = RequestMethod.GET)
+    public String create (Model model)
+    {
+        model.addAttribute("Activity", new Activity());
+        return "ActivityCreate";
+    }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST  )
     public String postActivity(@ModelAttribute Activity model)
