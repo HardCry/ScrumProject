@@ -17,8 +17,10 @@ public class ActivityController
 
 
     @RequestMapping(value = "/create", method = RequestMethod.POST  )
-    public void postActivity(@ModelAttribute Activity model)
+    public String postActivity(@ModelAttribute Activity model)
     {
         activityRepository.createActivity(model);
+
+        return "redirect:/created/";
     }
 }
