@@ -1,6 +1,6 @@
 package com.example.demo.Model;
 
-public class Activity
+public class ActivityModel
 {
 
     //Fields
@@ -10,7 +10,7 @@ public class Activity
     private String description;
 
     //Constructor
-    public Activity(int id, int ageRestriction, String name, String description)
+    public ActivityModel(int id, int ageRestriction, String name, String description)
     {
         this.id = id;
         this.ageRestriction = ageRestriction;
@@ -19,7 +19,7 @@ public class Activity
     }
 
     //No arg constructor
-    public Activity()
+    public ActivityModel()
     {
 
     }
@@ -59,7 +59,7 @@ public class Activity
 
     @Override
     public String toString() {
-        return "Activity{" +
+        return "ActivityModel{" +
                 ", ageRestriction=" + ageRestriction +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
