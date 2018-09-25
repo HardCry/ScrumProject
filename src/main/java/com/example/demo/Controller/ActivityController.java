@@ -1,11 +1,8 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Model.Activity;
+import com.example.demo.Model.ActivityModel;
 import com.example.demo.Repository.ActivityRepository;
-import org.springframework.context.annotation.Conditional;
-import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,15 +17,19 @@ public class ActivityController
     @RequestMapping(value = "/CreateActivity", method = RequestMethod.GET)
     public String create (Model model)
     {
-        model.addAttribute("Activity", new Activity());
+        model.addAttribute("ActivityModel", new ActivityModel());
         return "ActivityCreate";
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST  )
-    public String postActivity(@ModelAttribute Activity model)
+    public String postActivity(@ModelAttribute ActivityModel activityModel)
     {
-        activityRepository.createActivity(model);
+        activityRepository.createActivity(activityModel);
 
         return "redirect:/created/";
     }
+
+    
+
+
 }

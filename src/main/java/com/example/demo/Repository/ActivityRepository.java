@@ -1,6 +1,6 @@
 package com.example.demo.Repository;
 
-import com.example.demo.Model.Activity;
+import com.example.demo.Model.ActivityModel;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +9,7 @@ public class ActivityRepository
 {
     private JdbcTemplate jdbc;
 
-    public void createActivity(Activity activity)
+    public void createActivity(ActivityModel activity)
     {
         int id = activity.getId();
         String name = activity.getName();
