@@ -12,3 +12,12 @@ CREATE TABLE Activity (
     age_restriction INT,
     description TEXT NOT NULL
 );
+
+CREATE TABLE Booking(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  date VARCHAR(13) NOT NULL,
+  time VARCHAR(13) NOT NULL,
+  activity_id INT,
+
+  FOREIGN KEY(activity_id) REFERENCES Activity(id)
+);
