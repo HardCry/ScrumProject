@@ -17,6 +17,10 @@ public class ActivityModel
         this.name = name;
         this.description = description;
     }
+    public ActivityModel(String name)
+    {
+        this.name = name;
+    }
 
     //No arg constructor
     public ActivityModel()

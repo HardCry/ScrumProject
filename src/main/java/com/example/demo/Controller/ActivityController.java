@@ -20,39 +20,47 @@ public class ActivityController
     @GetMapping("/create")
     public String create (Model model)
     {
-        model.addAttribute("Activity", new ActivityModel());
+        model.addAttribute("ActivityModel", new ActivityModel());
 
         return "CreateActivity";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST  )
-    public String postActivity(@ModelAttribute ActivityModel activityModel, BindingResult bindingResult)
+    @PostMapping("/create")
+    public String postActivity(@ModelAttribute ActivityModel activityModel)
     {
 
         activityRepository.createActivity(activityModel);
 
-        return "redirect:/created/";
+        return "redirect:/home";
     }
 
     //Value og return skal udfyldes
     //Value skal beholde /{id}, altså er det
     //... der skal erstattes med et link
-    @RequestMapping(value = "/.../{id}", method = RequestMethod.GET)
-    public String updateActivity(@PathVariable int id, Model model)
+    @GetMapping("/edit")
+    public String updateActivity(@RequestParam("id") int id, Model model)
     {
         ActivityModel activityModel = activityRepository.getOnId(id);
-        model.addAttribute("activitymodel", activityModel);
+        model.addAttribute("ActivityModel", activityRepository.getOnId(id));
 
-        return "/...";
+        System.out.println("GEH");
+        return "EditActivity";
     }
 
     //Value og return skal udfyldes, når adressen er kendt
-    @RequestMapping(value = "/...", method = RequestMethod.POST)
+    @PostMapping("/edit")
     public String updateActivity(@ModelAttribute ActivityModel activityModel, RedirectAttributes rdt)
     {
         rdt.addFlashAttribute("message", "Aktivetet opdateret");
         activityRepository.updateActivity(activityModel);
 
-        return "/...";
+        return "redirect:/home";
+    }
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String getActivityList(Model model)
+    {
+        model.addAttribute("activities", activityRepository.getList());
+        return "home";
     }
 }
