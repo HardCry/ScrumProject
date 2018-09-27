@@ -44,18 +44,48 @@ public class ActivityRepository
         jdbc.update(sql);
     }
 
+
+    public void deleteActivity (ActivityModel activityModel)
+    {
+        String sql1 = "Delete from Activity where id =" + activityModel.getid();
+        jdbc.update(sql1);
+    }
+
     //Creates an activity model from a SqlRowSet
     //based on id, and return a model based on the values
     //of the SqlRowSet
     public ActivityModel getOnId(int id)
     {
+<<<<<<< HEAD
+        String sql = "SELECT * FROM Activity as a " +  "WHERE a.id = " + id + ";";
+=======
         String sql = "SELECT * FROM Activity as a " + "WHERE a.id = " + id + ";";
 
+>>>>>>> 75ddab04d64e288615df7db6703b715d5d195543
         SqlRowSet rs = jdbc.queryForRowSet(sql);
 
         rs.next();
 
+<<<<<<< HEAD
+
+        ActivityModel activityModel = new ActivityModel(id, name, ageRestriction, description);
+        return activityModel;
+    }
+
+    public ActivityModel getIdOnly(int id)
+    {
+        String sql = "select * from Activity where id = " + id + ";";
+        SqlRowSet rs = jdbc.queryForRowSet(sql);
+
+        ActivityModel activityModel = new ActivityModel();
+
+        while (rs.next())
+        {
+            activityModel = new ActivityModel(rs.getInt("id"));
+        }
+=======
         ActivityModel activityModel = new ActivityModel(rs.getInt(1), rs.getInt(3), rs.getString(2), rs.getString(4));
+>>>>>>> 75ddab04d64e288615df7db6703b715d5d195543
         return activityModel;
     }
 

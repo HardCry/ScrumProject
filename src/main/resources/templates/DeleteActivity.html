@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+</head>
+
+<body>
+
+<div class="deleteActivity">
+    <h2>
+        Er du sikker på at du vil slette denne aktivitet?
+    </h2>
+    <form th:action="@{/delete}" method="post" >
+        <input type="hidden" th:field="${ActivityModel.id}" />
+        <button class="btn btn=success" type="sutbit">Ja, jeg vil gerne slette denne aktivitet</button>
+        <a href="/..."><button type ="button" class="btn btn-danger" >Nej, jeg vil ikke slette denne aktivitet</button></a>
+    </form>
+</div>
+</body>
+
+</html>

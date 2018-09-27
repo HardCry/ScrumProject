@@ -10,11 +10,11 @@ public class ActivityModel
     private String description;
 
     //Constructor
-    public ActivityModel(int id, int ageRestriction, String name, String description)
+    public ActivityModel(int id, String name, int ageRestriction, String description)
     {
         this.id = id;
-        this.ageRestriction = ageRestriction;
         this.name = name;
+        this.ageRestriction = ageRestriction;
         this.description = description;
     }
     public ActivityModel(String name)
@@ -26,6 +26,10 @@ public class ActivityModel
     public ActivityModel()
     {
 
+    }
+    public ActivityModel(int id)
+    {
+        this.id = id;
     }
 
     //Getters and Setters
