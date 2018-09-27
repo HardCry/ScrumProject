@@ -5,15 +5,19 @@
     <title>Frontpage</title>
 </head>
 <body>
-    <div>
-        <h1>Aktiviteter</h1>
+    <div  style="background-color: #d6d6d6">
+        <h1 style="text-align: center">Aktiviteter</h1>
+        <hr>
         <div th:if="${message}" th:text="${message}"/>
-        <table>
+        <table style="border: 1px solid #d6d6d6; ">
             <tr>
                 <th>Navn</th>
+
+
             </tr>
-            <tr th:each="activity : ${activities}">
-                <td th:text="${activity.name}"></td>
+            <tr style="display: flex; text-align: center" th:each="activity : ${activities}">
+                <td style="border: 1px solid black; border-radius: 8px; text-align: center; width: 200px" th:text="${activity.name}"></td>
+
             </tr>
         </table>
     </div>

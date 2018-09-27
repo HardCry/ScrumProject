@@ -31,7 +31,7 @@ public class ActivityController
 
         activityRepository.createActivity(activityModel);
 
-        return "redirect:/created/";
+        return "redirect:/home";
     }
 
     //Value og return skal udfyldes
@@ -54,7 +54,7 @@ public class ActivityController
         rdt.addFlashAttribute("message", "Aktivetet opdateret");
         activityRepository.updateActivity(activityModel);
 
-        return "redirect:/edited";
+        return "redirect:/home";
     }
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
