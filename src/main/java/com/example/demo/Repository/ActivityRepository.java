@@ -6,6 +6,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Repository
 public class ActivityRepository
 {
@@ -54,5 +57,19 @@ public class ActivityRepository
 
         ActivityModel activityModel = new ActivityModel(rs.getInt(1), rs.getInt(3), rs.getString(2), rs.getString(4));
         return activityModel;
+    }
+
+    public List<ActivityModel> getList()
+    {
+        List<ActivityModel> activities = new ArrayList<>();
+        String sql = "SELECT * FROM activity_list";
+        SqlRowSet rs = jdbc.queryForRowSet(sql);
+
+        while(rs.next())
+        {
+            activities.add(new ActivityModel(rs.getString("name")));
+        }
+
+        return activities;
     }
 }
