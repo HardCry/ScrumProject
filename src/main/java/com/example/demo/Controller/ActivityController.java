@@ -34,6 +34,20 @@ public class ActivityController
         return "redirect:/created/";
     }
 
+    @GetMapping("/delete")
+    public String deleteActivity (@RequestParam("id") int id, Model model)
+    {
+        model.addAttribute("ActivityModel", activityRepository.getIdOnly(id));
+        return "DeleteActivity";
+    }
+
+    @PostMapping("/delete")
+    public String deleteActivity (@ModelAttribute ActivityModel activityModel)
+    {
+        activityRepository.deleteActivity(activityModel);
+        return "redirect:/...";
+    }
+
     //Value og return skal udfyldes
     //Value skal beholde /{id}, altså er det
     //... der skal erstattes med et link
