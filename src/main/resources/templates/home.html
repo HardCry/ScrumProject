@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontpage</title>
+</head>
+<body>
+    <div>
+        <h1>Aktiviteter</h1>
+        <div th:if="${message}" th:text="${message}"/>
+        <table>
+            <tr>
+                <th>Navn</th>
+            </tr>
+            <tr th:each="activity : ${activities}">
+                <td th:text="${activity.name}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -55,4 +55,11 @@ public class ActivityController
 
         return "/...";
     }
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String getActivityList(Model model)
+    {
+        model.addAttribute("activities", activityRepository.getList());
+        return "home";
+    }
 }
