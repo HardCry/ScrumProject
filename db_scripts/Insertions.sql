@@ -5,4 +5,4 @@ INSERT INTO Activity (name, age_restriction, description)
 		('Paintball', 18, 'This is a shooting game, be aware!'),
 		('Sumo wrestling', 8, 'Fight like a fat guy!');
         
-SELECT * FROM activity_list;
+## SELECT * FROM activity_list;
