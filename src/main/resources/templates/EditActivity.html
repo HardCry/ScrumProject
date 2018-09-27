@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xlmns:th="http://www.thymeleaf.org"
+      xmlns:xlmns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rediger aktivitet</title>
+</head>
+<body>
+<div class="container">
+    <form method="Post" th:action="@{/edit}">
+        <input type="hidden" th:field="${ActivityModel.id}"><br>
+
+        <p>Indtast aldersbegrænsning</p>
+        <input required  type="number"   th:field="${ActivityModel.ageRestriction}"/>
+        <p>Indtast navn</p>
+        <input required  type="text"   th:field="${ActivityModel.name}"/>
+        <p>Indtast beskrivelse</p>
+        <input  required type="text"   th:field="${ActivityModel.description}"/>
+        <input   type="submit"   value="Opdater"   />
+    </form>
+</div>
+</body>
+</html>

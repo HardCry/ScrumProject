@@ -46,15 +46,13 @@ public class ActivityRepository
     //of the SqlRowSet
     public ActivityModel getOnId(int id)
     {
-        String sql = "SELECT * FROM Activity as a" +
-                "WHERE a.id = " + id + ";";
+        String sql = "SELECT * FROM Activity as a " + "WHERE a.id = " + id + ";";
+
         SqlRowSet rs = jdbc.queryForRowSet(sql);
 
-        int ageRestriction = rs.getInt("age_restriction");
-        String description = rs.getString("description");
-        String name = rs.getString("name");
+        rs.next();
 
-        ActivityModel activityModel = new ActivityModel(id, ageRestriction, name, description);
+        ActivityModel activityModel = new ActivityModel(rs.getInt(1), rs.getInt(3), rs.getString(2), rs.getString(4));
         return activityModel;
     }
 }
