@@ -21,17 +21,17 @@
 <form method="POST" th:action="@{/create}">
     <table>
         <tr>
-            <input type="hidden" th:field="${Activity.id}">
+            <input type="hidden" th:field="${ActivityModel.id}">
             <td><label>Aktivitets Navn:</label></td>
-            <td><input type="text" th:field="${Activity.name}" required="required"></td>
+            <td><input type="text" th:field="${ActivityModel.name}" required="required"></td>
         </tr>
         <tr>
             <td><label>Aktivitets Aldersgrænse:</label></td>
-            <td><input type="number"  th:field="${Activity.ageRestriction}" required="required"></td>
+            <td><input type="number"  th:field="${ActivityModel.ageRestriction}" required="required"></td>
         </tr>
         <tr>
             <td><label>Aktivitets Beskrivelse:</label></td>
-            <td><input type="text" th:field="${Activity.description}" required="required"></td>
+            <td><input type="text" th:field="${ActivityModel.description}" required="required"></td>
         </tr>
     </table>
     <input type="submit"   value="Send"   />

@@ -12,3 +12,9 @@ CREATE TABLE Activity (
     age_restriction INT,
     description TEXT NOT NULL
 );
+
+CREATE VIEW activity_list AS
+SELECT
+	name
+FROM Activity
+ORDER BY name;

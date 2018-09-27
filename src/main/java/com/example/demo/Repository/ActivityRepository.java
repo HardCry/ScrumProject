@@ -6,6 +6,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Repository
 public class ActivityRepository
 {
@@ -53,13 +56,17 @@ public class ActivityRepository
     //of the SqlRowSet
     public ActivityModel getOnId(int id)
     {
+<<<<<<< HEAD
         String sql = "SELECT * FROM Activity as a " +  "WHERE a.id = " + id + ";";
+=======
+        String sql = "SELECT * FROM Activity as a " + "WHERE a.id = " + id + ";";
+
+>>>>>>> 75ddab04d64e288615df7db6703b715d5d195543
         SqlRowSet rs = jdbc.queryForRowSet(sql);
 
-        int ageRestriction = rs.getInt("age_restriction");
-        String description = rs.getString("description");
-        String name = rs.getString("name");
+        rs.next();
 
+<<<<<<< HEAD
 
         ActivityModel activityModel = new ActivityModel(id, name, ageRestriction, description);
         return activityModel;
@@ -76,6 +83,23 @@ public class ActivityRepository
         {
             activityModel = new ActivityModel(rs.getInt("id"));
         }
+=======
+        ActivityModel activityModel = new ActivityModel(rs.getInt(1), rs.getInt(3), rs.getString(2), rs.getString(4));
+>>>>>>> 75ddab04d64e288615df7db6703b715d5d195543
         return activityModel;
+    }
+
+    public List<ActivityModel> getList()
+    {
+        List<ActivityModel> activities = new ArrayList<>();
+        String sql = "SELECT * FROM activity_list";
+        SqlRowSet rs = jdbc.queryForRowSet(sql);
+
+        while(rs.next())
+        {
+            activities.add(new ActivityModel(rs.getString("name")));
+        }
+
+        return activities;
     }
 }
