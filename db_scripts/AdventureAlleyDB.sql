@@ -18,3 +18,17 @@ SELECT
 FROM Activity
 ORDER BY name;
 >>>>>>> 75ddab04d64e288615df7db6703b715d5d195543
+
+
+<<<<<<< HEAD
+CREATE TABLE Booking(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  date VARCHAR(13) NOT NULL,
+  time VARCHAR(13) NOT NULL,
+  activity_id INT,
+
+  FOREIGN KEY(activity_id) REFERENCES Activity(id)
+);
+=======
+
+
