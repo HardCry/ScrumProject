@@ -13,7 +13,6 @@ public class EventModel
     //Constructor me alle parametre
     // til database
     /**
-     * @param bookingModelList liste over alle bookings til denne event
      * @param activityModel aktivitet denne event er tilknyttet til
      * @param time events tidspunkt
      * @param date
@@ -23,5 +22,25 @@ public class EventModel
         this.activityModel = activityModel;
         this.time = time;
         this.date = date;
+    }
+
+    public List<BookingModel> getBookingModelList() {
+        return bookingModelList;
+    }
+
+    public ActivityModel getActivityModel() {
+        return activityModel;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public EventModel() {
+
     }
 }
