@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <title>Frontpage</title>
 </head>
-<body>
-    <div  style="background-color: #d6d6d6">
+<body style="background-color: #d6d6d6">
+    <div  style="background-color: #d6d6d6; position: relative">
         <h1 style="text-align: center">Aktiviteter</h1>
+        <button style="position: absolute; top: 12px; right: 20px; font-size: 100%; border-radius: 8px" onclick="window.location.href = '/login'">Login</button>
         <hr>
+
         <div th:if="${message}" th:text="${message}"/>
-        <table style="border: 1px solid #d6d6d6; ">
-            <tr>
-                <th>Navn</th>
-
-
-            </tr>
-            <tr style="display: flex; text-align: center" th:each="activity : ${activities}">
-                <td style="border: 1px solid black; border-radius: 8px; text-align: center; width: 200px" th:text="${activity.name}"></td>
+        <table style="border: 1px solid #d6d6d6; display: flex; text-align: center; align-content: center; justify-content: center">
+            <tr style="display: flex; text-align: center; align-content: center; justify-content: center" th:each="activity : ${activities}">
+                <td style="border: 1px solid black; border-radius: 8px; text-align: center; width: 200px; margin-bottom: 6px" th:text="${activity.name}"></td>
 
             </tr>
         </table>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xlmns:th="http://www.thymeleaf.org"
+      xmlns:xlmns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div class="container">
+    <form method="Post" th:action="@{/login}">
+        <p>Indtast brugernavn</p>
+        <input required  type="text"  th:field="${LoginModel.username}"/>
+        <p>Indtast kode</p>
+        <input required  type="password"  th:field="${LoginModel.password}"/>
+        <input   type="submit"   value="Login"   />
+    </form>
+</div>
+</body>
+</html>
