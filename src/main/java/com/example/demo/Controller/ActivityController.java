@@ -77,4 +77,11 @@ public class ActivityController
         model.addAttribute("activities", activityRepository.getList());
         return "home";
     }
+    @GetMapping ("/details")
+    public String getDetails (@RequestParam ("id") int id, Model model)
+    {
+        model.addAttribute("ActivityModel", activityRepository.getOnId(id));
+        return "ActivityDetails";
+    }
+
 }

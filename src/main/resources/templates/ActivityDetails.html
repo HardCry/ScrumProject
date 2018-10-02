@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ActivityDetails</title>
+</head>
+<body>
+<div class="activityDetails">
+    <h1>Aktivitets Detaljer</h1>
+    <p th:text="'Navn: ' + ${ActivityModel.name}">
+    <p th:text="'Aldersbegrænsning: ' + ${ActivityModel.ageRestriction} + ' år'">
+    <p th:text="'Beskrivelse: ' + ${ActivityModel.description}">
+</div>
+
+</body>
+</html>
