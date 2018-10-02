@@ -10,7 +10,7 @@ public class ActivityModel
     private String description;
 
     //Constructor
-    public ActivityModel(int id, String name, int ageRestriction, String description)
+    public ActivityModel(int id,  int ageRestriction, String name, String description)
     {
         this.id = id;
         this.name = name;
