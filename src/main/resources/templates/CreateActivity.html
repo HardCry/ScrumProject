@@ -15,22 +15,22 @@
 
     <title>create</title>
 </head>
-<body>
+<body style="background-color: #4fabff">
 
 <div class="container">
 <form method="POST" th:action="@{/create}">
     <table>
         <tr>
             <input type="hidden" th:field="${ActivityModel.id}">
-            <td><label>Aktivitets Navn:</label></td>
+            <td style="color: #edf6ff;"><label>Aktivitets Navn:</label></td>
             <td><input type="text" th:field="${ActivityModel.name}" required="required"></td>
         </tr>
         <tr>
-            <td><label>Aktivitets Aldersgrænse:</label></td>
+            <td style="color: #edf6ff;"><label>Aktivitets Aldersgrænse:</label></td>
             <td><input type="number"  th:field="${ActivityModel.ageRestriction}" required="required"></td>
         </tr>
         <tr>
-            <td><label>Aktivitets Beskrivelse:</label></td>
+            <td style="color: #edf6ff;"><label>Aktivitets Beskrivelse:</label></td>
             <td><input type="text" th:field="${ActivityModel.description}" required="required"></td>
         </tr>
     </table>

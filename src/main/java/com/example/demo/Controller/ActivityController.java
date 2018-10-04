@@ -45,7 +45,7 @@ public class ActivityController
     public String deleteActivity (@ModelAttribute ActivityModel activityModel)
     {
         activityRepository.deleteActivity(activityModel);
-        return "redirect:/...";
+        return "redirect:/home";
     }
 
     //Value og return skal udfyldes
@@ -57,7 +57,6 @@ public class ActivityController
         ActivityModel activityModel = activityRepository.getOnId(id);
         model.addAttribute("ActivityModel", activityRepository.getOnId(id));
 
-        System.out.println("GEH");
         return "EditActivity";
     }
 
