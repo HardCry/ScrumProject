@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Here we can create an event</title>
+</head>
+<body>
+<form method="POST" th:action="@{/CreateEvent}">
+    <p>Choose an event to host: </p>
+    <p>Choose a date to host event: </p><input type="date" th:field="${eventModel.date}">
+    <p>Write the time of the day you want to attend: </p><input type="text" th:field="${eventModel.time}">
+    <p>Select activity: </p> <select th:field="*{eventModel.activityModel}" required>
+    <option value="">--</option>
+    <option th:each="activities : ${activityList}"
+            th:value="${activities.name}"
+            th:text="${activities.name}">
+    </option>
+
+    <input type="submit" value="Create Event" title="Create"/>
+</form>
+</body>
+</html>

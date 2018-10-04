@@ -83,7 +83,7 @@ public class ActivityRepository
     public List<ActivityModel> getList()
     {
         List<ActivityModel> activities = new ArrayList<>();
-        String sql = "SELECT * FROM activity_list";
+        String sql = "SELECT * FROM Activity";
         SqlRowSet rs = jdbc.queryForRowSet(sql);
 
         while(rs.next())

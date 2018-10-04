@@ -1,9 +1,15 @@
 package com.example.demo.Model;
 
+import javax.swing.text.DateFormatter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 public class BookingModel {
     private int id;
     private String date;
     private String time;
+    ActivityModel activityModel;
+
 
     //private int activity_id //skal det med?? fra sql
 
