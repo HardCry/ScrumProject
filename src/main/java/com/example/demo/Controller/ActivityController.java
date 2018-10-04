@@ -31,7 +31,7 @@ public class ActivityController
 
         activityRepository.createActivity(activityModel);
 
-        return "redirect:/home";
+        return "redirect:/adminHome";
     }
 
     @GetMapping("/delete")
@@ -45,7 +45,7 @@ public class ActivityController
     public String deleteActivity (@ModelAttribute ActivityModel activityModel)
     {
         activityRepository.deleteActivity(activityModel);
-        return "redirect:/home";
+        return "redirect:/adminHome";
     }
 
     //Value og return skal udfyldes
@@ -64,10 +64,10 @@ public class ActivityController
     @PostMapping("/edit")
     public String updateActivity(@ModelAttribute ActivityModel activityModel, RedirectAttributes rdt)
     {
-        rdt.addFlashAttribute("message", "Aktivetet opdateret");
+        
         activityRepository.updateActivity(activityModel);
 
-        return "redirect:/home";
+        return "redirect:/adminHome";
     }
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
