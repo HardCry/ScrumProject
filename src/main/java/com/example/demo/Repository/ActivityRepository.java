@@ -88,7 +88,7 @@ public class ActivityRepository
 
         while(rs.next())
         {
-            activities.add(new ActivityModel(rs.getString("name")));
+            activities.add(new ActivityModel(rs.getString("name"), rs.getInt("id")));
         }
 
         return activities;

@@ -32,6 +32,12 @@ public class ActivityModel
         this.id = id;
     }
 
+    public ActivityModel(String name, int id)
+    {
+        this.name = name;
+        this.id = id;
+    }
+
     //Getters and Setters
     public int getid() {
         return id;

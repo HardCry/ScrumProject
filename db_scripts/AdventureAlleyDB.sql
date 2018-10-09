@@ -12,11 +12,17 @@ CREATE TABLE Activity (
     age_restriction INT,
     description TEXT NOT NULL
 );
-CREATE VIEW activity_list AS
-SELECT
-	name
-FROM Activity
-ORDER BY name;
+
+SELECT * FROM Event;
+
+CREATE TABLE Event(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    date VARCHAR(40) NOT NULL,
+    time VARCHAR(40) NOT NULL,
+    activity_id INT,
+
+    FOREIGN KEY(activity_id) REFERENCES Activity(id)
+);
 
 CREATE TABLE Booking(
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -26,5 +32,3 @@ CREATE TABLE Booking(
 
   FOREIGN KEY(activity_id) REFERENCES Activity(id)
 );
-
-

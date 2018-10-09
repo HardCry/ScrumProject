@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventlist</title>
+</head>
+<body style="background-color: #d6d6d6">
+<div  style="background-color: #d6d6d6; position: relative">
+    <h1 style="text-align: center">Events</h1>
+    <hr>
+
+    <div th:if="${message}" th:text="${message}"/>
+    <table style="border: 1px solid #d6d6d6; display: flex; text-align: center; align-content: center; justify-content: center">
+        <tr style="display: flex; text-align: center; align-content: center; justify-content: center" th:each="event : ${events}">
+            <td style="border: 1px solid black; border-radius: 8px; text-align: center; width: 200px; margin-bottom: 6px"
+                th:text="${event.getActivityName()}"></td>
+            <td style="border: 1px solid black; border-radius: 8px; text-align: center; width: 200px; margin-bottom: 6px"
+                    th:text="${event.getDate()}"></td>
+            <td style="border: 1px solid black; border-radius: 8px; text-align: center; width: 200px; margin-bottom: 6px"
+                    th:text="${event.getTime()}"></td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>
