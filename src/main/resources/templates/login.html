@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
-<body>
+<body style=" display: flex; justify-content: center; margin-top: 18%; background-color: #4fabff">
 <div class="container">
-    <form method="Post" th:action="@{/login}">
-        <p>Indtast brugernavn</p>
-        <input required  type="text"  th:field="${LoginModel.username}"/>
-        <p>Indtast kode</p>
+    <form style="position: relative" method="Post" th:action="@{/login}">
+        <p style="color: #edf6ff">Indtast brugernavn</p>
+        <input required  type="text" th:field="${LoginModel.username}"/>
+        <p style="color: #edf6ff">Indtast kode</p>
         <input required  type="password"  th:field="${LoginModel.password}"/>
-        <input   type="submit"   value="Login"   />
+        <br>
+        <input style="position: absolute; top: 102%; left: 33%; text-align: center" type="submit"   value="Login"   />
     </form>
 </div>
 </body>

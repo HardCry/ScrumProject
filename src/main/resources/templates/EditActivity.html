@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <title>Rediger aktivitet</title>
 </head>
-<body>
+<body style="background-color: #4fabff">
 <div class="container">
     <form method="Post" th:action="@{/edit}">
         <input type="hidden" th:field="${ActivityModel.id}"><br>
 
-        <p>Indtast aldersbegrænsning</p>
+        <p style="color: #edf6ff">Indtast aldersbegrænsning</p>
         <input required  type="number"   th:field="${ActivityModel.ageRestriction}"/>
-        <p>Indtast navn</p>
+        <p style="color: #edf6ff">Indtast navn</p>
         <input required  type="text"   th:field="${ActivityModel.name}"/>
-        <p>Indtast beskrivelse</p>
+        <p style="color: #edf6ff">Indtast beskrivelse</p>
         <input  required type="text"   th:field="${ActivityModel.description}"/>
-        <input   type="submit"   value="Opdater"   />
+        <input   type="submit"   value="Opdater"  onclick="return alert('Aktivitet opdateret') " />
     </form>
 </div>
 </body>
